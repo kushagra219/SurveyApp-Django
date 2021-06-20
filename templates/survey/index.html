@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+</head>
+<body>
+    <style>
+        body {
+            background-color: rgba(89, 89, 151, 0.8);
+        }
+        
+        * {
+            font-size: 18px;
+        }
+        
+        .heading {
+            font-size: 30px;
+            text-align: center;
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        #survey-form {
+            background-color: #fff;
+            width: 60%;
+            margin: auto;
+            text-align: center;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        .form-item {
+            padding: 12px;
+            display: flex;
+            margin-left: 80px;
+            margin-right: 80px;
+        }
+
+        .form-label {
+            width: 50%;
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 8px;
+            text-align: right;
+        }
+
+        .form-input {
+            width: 50%;
+            display: flex;
+            justify-content: flex-start;
+            padding-left: 8px;
+        }
+
+        select {
+            background-color: lightgray;
+        }
+
+        .checkboxes {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        button {
+            border-radius: 8px;
+            padding: 8px;
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+
+        .red {
+            color: red;
+        }
+
+    </style>
+
+    <h1 class="heading">Survey Form</h1>
+    
+    <form id="survey-form" action="">
+        <p>Let us know how we can improve CodingZen</p>
+
+        <div class="form-item">
+            <div class="form-label">
+                <p><span class="red">*</span> Name</p>
+            </div>
+            <div class="form-input">
+                <input type="text" placeholder="Enter your name" required></input>
+            </div>
+        </div>
+
+        <div class="form-item">
+            <div class="form-label">
+                <p><span class="red">*</span> Email</p>
+            </div>
+            <div class="form-input">
+                <input type="email" placeholder="Enter your email" required></input>
+            </div>
+        </div>
+
+        <div class="form-item">
+            <div class="form-label">
+                <p><span class="red">*</span> Age</p>
+            </div>
+            <div class="form-input">
+                <input type="number" placeholder="Enter your age" required></input>
+            </div>
+        </div>
+
+        <div class="form-item">
+            <div class="form-label">
+                Which option describes your current role?
+            </div>
+            <div class="form-input">
+                <select name="" id="">
+                    <option value="">Student</option>
+                    <option value="">Part Time</option>
+                    <option value="">Full Time</option>
+                    <option value="">Others</option>
+                </select>
+            </div>
+        </div>
+
+        
+        <div class="form-item">
+            <div class="form-label">
+                How likely are you to recommend CodingZen to a friend?
+            </div>
+            <div class="form-input checkboxes">
+                <div><input name="recommendation" value="definitely" type="radio">Definitely</input></div>
+                <div><input name="recommendation" value="maybe" type="radio">Maybe</input></div>
+                <div><input name="recommendation" value="not-sure" type="radio">Not sure</input></div>
+            </div>
+        </div>
+
+        <div class="form-item">
+            <div class="form-label">
+                Which language do you like the most?
+            </div>
+            <div class="form-input">
+                <select name="" id="">
+                    <option value="">C++</option>
+                    <option value="">Java</option>
+                    <option value="">Python</option>
+                </select>
+            </div>
+        </div>
+
+        
+        <div class="form-item">
+            <div class="form-label">
+                Things that should be improved in the future? (Check all that apply)
+            </div>
+            <div class="form-input checkboxes">
+                <div><input name="improvement" value="frontend" type="checkbox">Frontend</input></div>
+                <div><input name="improvement" value="backend" type="checkbox">Backend</input></div>
+                <div><input name="improvement" value="data-vizualisation" type="checkbox">Data Vizualisation</input></div>               
+            </div>
+        </div>
+
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+
+    </form>
+</body>
+</html>
