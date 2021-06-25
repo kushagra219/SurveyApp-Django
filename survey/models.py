@@ -38,13 +38,25 @@ class Survey(models.Model):
     email = models.EmailField()
     age = models.PositiveIntegerField()
     current_role = models.CharField(choices=roles, max_length=2)
-    recommedation = models.CharField(choices=recommendations, max_length=2)
+    recommendation = models.CharField(choices=recommendations, max_length=2)
     fav_language = models.CharField(choices=languages, max_length=2)
     improvements = models.ManyToManyField(Improvement)
 
     def __str__(self):
         return f"{self.id}. {self.name}"
 
+    def get_improvements_string(self):
+        string = ""
+        for id in self.improvements:
+            improvement_obj = Improvement.objects.get(id=id)
+            string += improvement_obj + ", "
+        return string[:-2] if len(string) > 0 else string
+
+
+# Common Model Queries
+# model.objects.all() - gives all the objects of that models
+# model.objects.get(field1=value1, field2=value2....) - give you a single object satisfying the condition
+# model.objects.filter(field1=value1, field2=value2......) - give you multiple objects satisfying the conditions
 
 
 

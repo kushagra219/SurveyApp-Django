@@ -16,7 +16,12 @@ Including another URLconf
 from django.urls import path
 from . import views
 
+# django, there are multiple apps
+# so we specify the app name in each app's urls.py file
+app_name = 'survey'
+
 urlpatterns = [
-    path('', views.index),
-    path('thankyou/', views.thankyou),
+    path('form/', views.index, name="index"),
+    path('thankyou/', views.thank_you, name="thank-you"),
+    path('list/', views.survey_list, name="survey-list"),
 ]
